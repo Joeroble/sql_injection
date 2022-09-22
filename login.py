@@ -58,11 +58,11 @@ class LoginGUI(Frame):
         cursor = db.cursor()
 
         # create a SQL statement using a format string to include the user's username and password 
-        sql_statement = f"SELECT name FROM users WHERE username = '{uname}' and password = '{password}'" 
+        sql_statement = "SELECT name FROM users WHERE username = ? and password = ?" 
 
         print('About to execute the following SQL statement: \n' + sql_statement)
 
-        cursor.execute(sql_statement)   # Execute the SQL statement we created
+        cursor.execute(sql_statement, (uname, password))   # Execute the SQL statement we created
 
         result = None  # Assume login fails, unless DB returns a row for this user
 
